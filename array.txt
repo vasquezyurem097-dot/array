@@ -1,0 +1,29 @@
+#include <stdio.h>
+int enteros [5];
+int main()
+{
+    float calificaciones [5];
+    float cal1, cal2, cal3, cal4, cal5;
+    float promedio;
+    calificaciones [0] = 0;
+    calificaciones [1] = 7;
+    calificaciones [2] = 8;
+    calificaciones [3] = 1;
+    calificaciones [4] = 20;
+ 
+    printf ("%f", calificaciones [1]);
+    for (int i = 0; i < 5; i++) {
+        printf ("ingrese calificacion %d: \n", i + 1);
+        scanf ("%f", &calificaciones [i]);
+    }
+    for (int i = 0; i < 5; i++) {
+        printf ("calificaion %d: %.2f \n", i + 1, calificaciones [i]);
+    }
+    promedio = 0;
+    for ( int i = 0; i < 5; i ++) {
+        promedio += calificaciones [1];
+    }
+    promedio /= 5;
+    printf ("promedio: %.2f\n ");
+    return 0;
+}
