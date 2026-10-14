@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main()
+{
+    float fahrenheit[5];
+    float celsius[5];
+    int i, mayor = 0, menor = 0;
+
+    for(i = 0; i < 5; i++)
+    {
+        printf("Ingresa la temperatura en Fahrenheit del dia %d: ", i + 1);
+        scanf("%f", &fahrenheit[i]);
+
+        celsius[i] = (fahrenheit[i] - 32) / 1.8;
+    }
+
+    for(i = 1; i < 5; i++)
+    {
+        if(celsius[i] > celsius[mayor])
+        {
+            mayor = i;
+        }
+
+        if(celsius[i] < celsius[menor])
+        {
+            menor = i;
+        }
+    }
+
+    printf("\nTemperaturas en Celsius:\n");
+
+    for(i = 0; i < 5; i++)
+    {
+        printf("Dia %d: %.2f C\n", i + 1, celsius[i]);
+    }
+
+    printf("\nDia mas caluroso: Dia %d con %.2f C\n",
+           mayor + 1, celsius[mayor]);
+
+    printf("Dia mas frio: Dia %d con %.2f C\n",
+           menor + 1, celsius[menor]);
+
+    return 0;
+}
